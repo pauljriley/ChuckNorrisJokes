@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="30"
+        android:contentDescription="@string/personalised_joke"
+        android:src="@drawable/chuck_norris_personalised_landscape"
+        android:foreground="@drawable/list_gradient"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="70"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.devspark.robototextview.widget.RobotoTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            android:textSize="24sp"
+            app:textStyle="normal"
+            app:fontFamily="roboto"
+            android:text="@string/please_enter_your_name"/>
+
+        <com.devspark.robototextview.widget.RobotoEditText
+            android:id="@+id/personalised_name"
+            android:hint="@string/firstname_lastname"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="24sp"
+            app:textStyle="normal"
+            app:fontFamily="roboto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.devspark.robototextview.widget.RobotoButton
+            android:id="@+id/submit_name"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/submit"
+            android:textSize="24sp"
+            app:textStyle="normal"
+            app:fontFamily="roboto"
+            android:paddingBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

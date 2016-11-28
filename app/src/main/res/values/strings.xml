@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">That Chuck Norris Jokes App</string>
+    <string name="random_joke">Random Joke</string>
+    <string name="personalised_joke">Personalised joke</string>
+    <string name="all_the_jokes">All the jokes</string>
+    <string name="allow_explicit_jokes">Allow explicit jokes</string>
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="firstname_lastname">Firstname Lastname</string>
+    <string name="submit">Submit</string>
+    <string name="personalised">Personalised</string>
+</resources>
