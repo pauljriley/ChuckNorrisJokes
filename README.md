@@ -1,4 +1,4 @@
-https://codeship.com/projects/bf53e4b0-979b-0134-fc85-4e0cbd91c6dd/status?branch=master
+![codeship](https://codeship.com/projects/bf53e4b0-979b-0134-fc85-4e0cbd91c6dd/status?branch=master)
 
 # ChuckNorrisJokes
 Android Programming Challenge, based around the Internet Chuck Norris Database
