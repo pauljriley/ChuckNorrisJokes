@@ -1,4 +1,4 @@
-[![Build Status](https://circleci.com/gh/pauljriley/ChuckNorrisJokes.png?circle-token=78259d885cdd9c2e1b768b3831b2004db69fbe11](https://circleci.com/gh/pauljriley/ChuckNorrisJokes)
+[![CircleCI](https://circleci.com/gh/pauljriley/ChuckNorrisJokes.svg?style=svg&circle-token=78259d885cdd9c2e1b768b3831b2004db69fbe11)](https://circleci.com/gh/pauljriley/ChuckNorrisJokes)
 
 # ChuckNorrisJokes
 Android Programming Challenge, based around the Internet Chuck Norris Database

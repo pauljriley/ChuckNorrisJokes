@@ -4,11 +4,6 @@ machine:
   java:
     version: oraclejdk8
 
-checkout:
-  post:
-    - git submodule sync
-    - git submodule update --init
-
 test:
   override:
     - rake prep_build
