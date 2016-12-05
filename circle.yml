@@ -1,0 +1,36 @@
+machine:
+  environment:
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
+  java:
+    version: oraclejdk8
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init
+
+test:
+  override:
+    - rake prep_build
+
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter tools,extra-android-m2repository,extra-android-support,android-24
+    - echo y | android update sdk --no-ui --all --filter build-tools-24.0.1
+    - echo "export rvm_ignore_gemsets_flag=1" >> ~/.rvmrc
+    - gem install bundler
+
+deployment:
+  production:
+    branch: master
+    commands:
+        - (bundle exec rake circle):
+            timeout: 1000
+        - cp -r app/build/outputs/apk/ $CIRCLE_ARTIFACTS
+
+  staging:
+    branch: develop
+    commands:
+        - (bundle exec rake circle):
+            timeout: 1000
+        - cp -r app/build/outputs/apk/ $CIRCLE_ARTIFACTS

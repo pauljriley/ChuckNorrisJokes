@@ -1,4 +1,4 @@
-![codeship](https://codeship.com/projects/bf53e4b0-979b-0134-fc85-4e0cbd91c6dd/status?branch=master)
+[![Build Status](https://circleci.com/gh/pauljriley/ChuckNorrisJokes.png?circle-token=78259d885cdd9c2e1b768b3831b2004db69fbe11](https://circleci.com/gh/pauljriley/ChuckNorrisJokes)
 
 # ChuckNorrisJokes
 Android Programming Challenge, based around the Internet Chuck Norris Database
