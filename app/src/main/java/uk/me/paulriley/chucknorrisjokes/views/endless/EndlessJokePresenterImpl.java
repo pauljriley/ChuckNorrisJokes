@@ -12,7 +12,6 @@ import rx.schedulers.Schedulers;
 import uk.me.paulriley.chucknorrisjokes.ChuckNorrisJokesApplication;
 import uk.me.paulriley.chucknorrisjokes.services.jokeResults.ICNDBResults;
 import uk.me.paulriley.chucknorrisjokes.services.jokeResults.JokesFacade;
-import uk.me.paulriley.chucknorrisjokes.services.model.IcndbJokes;
 import uk.me.paulriley.chucknorrisjokes.services.model.Joke;
 
 public class EndlessJokePresenterImpl implements EndlessJokePresenter {
@@ -45,8 +44,15 @@ public class EndlessJokePresenterImpl implements EndlessJokePresenter {
             ICNDBResults icmdbResults = jokesFacade.getIcndbResults();
 
             icmdbResults.getJokes(params)
+                    .map(icndbJokes -> {
+                        List<String> jokes = new ArrayList<>();
+                        for (Joke joke: icndbJokes.getValue()) {
+                            jokes.add(joke.getJoke());
+                        }
+                        return jokes;
+                    })
                     .subscribeOn(Schedulers.io())
-                    .subscribe(new Subscriber<IcndbJokes>() {
+                    .subscribe(new Subscriber<List<String>>() {
                         @Override
                         public void onCompleted() {
                         }
@@ -56,12 +62,7 @@ public class EndlessJokePresenterImpl implements EndlessJokePresenter {
                         }
 
                         @Override
-                        public void onNext(IcndbJokes icndbJokes) {
-                            List<String> jokes = new ArrayList<>();
-                            for (Joke joke: icndbJokes.getValue()) {
-                                jokes.add(joke.getJoke());
-                            }
-
+                        public void onNext(List<String> jokes) {
                             endlessJokesView.updateData(jokes);
                         }
                     });

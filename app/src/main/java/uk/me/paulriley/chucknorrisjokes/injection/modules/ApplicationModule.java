@@ -30,6 +30,9 @@ import uk.me.paulriley.chucknorrisjokes.views.personalise.PersonalisedPresenterI
 public class ApplicationModule {
 
     private JokesFacade mJokesFacade;
+    private MainPresenter mMainPresenter;
+    private PersonalisedPresenter mPersonalisedPresenter;
+    private EndlessJokePresenter mEndlessJokePresenter;
 
     public ApplicationModule() {
 
@@ -46,16 +49,28 @@ public class ApplicationModule {
 
     @Provides @Singleton
     public MainPresenter providesMainPresenter() {
-        return new MainPresenterImpl();
+        if (mMainPresenter == null) {
+            mMainPresenter = new MainPresenterImpl();
+        }
+
+        return mMainPresenter;
     }
 
     @Provides @Singleton
     public PersonalisedPresenter providesPersonalisedPresenter() {
-        return new PersonalisedPresenterImpl();
+        if (mPersonalisedPresenter == null) {
+            mPersonalisedPresenter = new PersonalisedPresenterImpl();
+        }
+
+        return mPersonalisedPresenter;
     }
 
     @Provides @Singleton
     public EndlessJokePresenter providesEndlessJokePresenter() {
-        return new EndlessJokePresenterImpl();
+        if (mEndlessJokePresenter == null) {
+            mEndlessJokePresenter = new EndlessJokePresenterImpl();
+        }
+
+        return mEndlessJokePresenter;
     }
 }
