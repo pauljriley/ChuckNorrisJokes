@@ -1,5 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rake', '~> 10.4.2'
+gem 'pry', '~> 0.9.12.6'
+gem 'pry-remote', '~> 0.1.8'
+gem 'pry-nav', '~> 0.2.4'
 gem 'require_all', '~> 1.3.2'
-gem 'rspec', '~> 3.4.0'
+# gem 'calabash-android', '~> 0.7.3'
+gem 'xamarin-test-cloud', '~> 1.0.0'
+gem 'travis', '~> 1.7.5'
+gem 'sendgrid_ruby', '~> 0.0.6'
+gem 'azure','~> 0.6.4'
+# gem 'cucumber','~> 1.3.14'
+gem 'mimic', '~> 0.4.3'
+gem "anticipate", "~> 0.1.1"

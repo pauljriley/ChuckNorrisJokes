@@ -18,7 +18,6 @@ public class JokesAdapter extends RecyclerView.Adapter<JokesViewHolder> {
     private List<String> jokes = new ArrayList<>();
 
     public void setData(List<String> jokes) {
-        this.jokes.clear();
         this.jokes.addAll(jokes);
     }
 
